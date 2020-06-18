@@ -3,9 +3,9 @@ A Personal-Tracking System For Those Who Wants To Track Themselves!!!
 
 ## Installation:
 
-git clone https://github.com/Ethical-Hacking-Zone/P-TS
+`git clone https://github.com/Ethical-Hacking-Zone/P-TS`
 
-cd P-TS && chmod +x && ./P-TS.sh
+`cd P-TS && chmod +x && ./P-TS.sh`
 
 ## Important:
 
