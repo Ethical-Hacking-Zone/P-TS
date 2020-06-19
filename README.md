@@ -5,7 +5,7 @@ A Personal-Tracking System For Those Who Wants To Track Themselves!!!
 
 `git clone https://github.com/Ethical-Hacking-Zone/P-TS`
 
-`cd P-TS && chmod +x && ./P-TS.sh`
+`cd P-TS && chmod +x P-TS.sh && ./P-TS.sh`
 
 ## Important:
 
