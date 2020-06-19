@@ -11,7 +11,7 @@ read a1
 echo "Found All Requirements....."
 echo "Installing Requirements....."
 apt install figlet toilet python curl -y
-python3 -m pip install requests bs4 lxml lolcat
+python3 -m pip install requests bs4 libxml2 libxslt lxml lolcat wheel
 echo This Tool Was Made By cYBER kNIGHT
 echo Requirements Installed.....
 echo Press Enter To Continue....
