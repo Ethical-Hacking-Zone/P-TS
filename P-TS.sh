@@ -51,6 +51,7 @@ exit 0
 elif [[ $ch -eq '2' || $ch -eq '02' ]];then
 clear
 echo -e "\e[1;32m"
+figlet -f future Install And Run Orbot For Unlimited Usage....
 python3 gain_info.py
 figlet -f future Thanks For Using This Tool!!! | lolcat
 exit 0
