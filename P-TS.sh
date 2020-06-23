@@ -11,7 +11,7 @@ read a1
 echo "Found All Requirements....."
 echo "Installing Requirements....."
 apt install figlet toilet python curl -y
-python3 -m pip install wheel requests bs4 libxslt lxml lolcat
+python3 -m pip install wheel requests bs4 lxml lolcat
 echo This Tool Was Made By cYBER kNIGHT
 echo Requirements Installed.....
 echo Press Enter To Continue....
@@ -43,7 +43,7 @@ read -p $'\n\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m]\e[0m \e[1;36m Choose An Option
 
 if [[ $ch -eq '1' || $ch -eq '01' ]];then
 clear
-echo -e "\e[1;32m"
+echo -e "\e[1;96m"
 python3 info.py
 figlet -f future Thanks For Using This Tool!!! | lolcat
 exit 0
