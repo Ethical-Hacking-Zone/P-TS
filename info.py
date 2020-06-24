@@ -1,28 +1,22 @@
 #!/usr/bin/python3
+
 import hashlib
 import json
-import os
 import requests as req
 from bs4 import BeautifulSoup as bsp
 
-
-phone = str(input('\n Enter Your Phone Number (Without +) : '))
+phe = input('\n Enter Your Phone Number (Without +) : ')
 
 site = "https://numverify.com/"
+
 r = req.get(site)
 
-with open('site.txt', 'wb') as sh:
-	sh.write(r.content)
+r2 = r.content.decode('utf-8')
+r4u = (bsp(r2, 'html5lib'))
+a = r4u.find_all('input', type="hidden")[1]
+a2 = a['value']
 
-with open('site.txt') as cp:
-	soup = bsp(cp, 'lxml')
-#print (soup.prettify)
-
-a = soup.find('input', type="hidden").next.next
-b = a['value']
-print (b)
-
-ay = hashlib.md5((phone + b).encode('utf-8')).hexdigest()
+ay = hashlib.md5((phe + a2).encode('utf-8')).hexdigest()
 
 headers = {
         'Host': 'numverify.com',
@@ -38,42 +32,34 @@ headers = {
         'Cache-Control': 'no-cache'
 }
 
-ulr = "https://numverify.com/php_helper_scripts/phone_api.php?secret_key={}&number={}".format(ay, phone)
+ulr = "https://numverify.com/php_helper_scripts/phone_api.php?secret_key={}&number={}".format(ay, phe)
 
-rr = req.get(ulr, headers=headers)
-inf = rr.text
-xcd = inf.encode('utf-8')
+try:
+   rr = req.get(ulr, headers=headers)
+   inf = rr.content.decode()
+   ze2 = json.loads(inf)
+   ad = (ze2['valid'])
+   at = (ze2['local_format'])
+   dn = (ze2['international_format'])
+   df = (ze2['country_prefix'])
+   dj = (ze2['country_code'])
+   dk = (ze2['country_name'])
+   dl = (ze2['location'])
+   c2r = (ze2['carrier'])
+   lne = (ze2['line_type'])
+except KeyError as xlr:
+   print ('\n Using Tor is mandatory !!! ')
+   exit()
 
-with open('inf.txt', 'wb') as x:
-	x.write(xcd)
+da = "\033[32m"
+re = '\033[0m'
 
-with open('inf.txt') as js:
-	dat = json.load(js)
-
-ad = (dat['valid'])
-at = (dat['local_format'])
-dn = (dat['international_format'])
-df = (dat['country_prefix'])
-dj = (dat['country_code'])
-dk = (dat['country_name'])
-dl = (dat['location'])
-carrier = (dat['carrier'])
-line = (dat['line_type'])
-
-data = "\033[32m"
-req = '\033[0m'
-       
-print (data +'\n Valid number : '+ req, ad)
-print (data +' Local format : '+ req, at)
-print (data +' International format : '+ req, dn)
-print (data +' Country prefix : '+ req, df)
-print (data +' Country code : '+ req, dj)
-print (data +' Country name : '+ req, dk)
-print (data +' Location : '+ req, dl)
-print (data +' Carrier : '+ req, carrier)
-print (data +' Type : '+ req, line)
-		        
-
-dir = "$HOME/*.txt"
-os.system('rm -rf %s' % dir)
-
+print (da +'\n Valid number : '+ re, ad)
+print (da +' Local format : '+ re, at)
+print (da +' International format : '+ re, dn)
+print (da +' Country prefix : '+ re, df)
+print (da +' Country code : '+ re, dj)
+print (da +' Country name : '+ re, dk)
+print (da +' Location : '+ re, dl)
+print (da +' Carrier : '+ re, c2r)
+print (da +' Type : '+ re, lne)
