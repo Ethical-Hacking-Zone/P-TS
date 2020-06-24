@@ -23,7 +23,7 @@ if choice == 1:
       print (' Free : ', b)
       print (' Spam : ', c)
       print (' Scam : ', e)
-      print (' Disposable : ', f)
+      print (' Temp : ', f)
   except KeyError as Error:
       print ('\n Use Tor!!!')
   except KeyboardInterrupt as KeyError:
