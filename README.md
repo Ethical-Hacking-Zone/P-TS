@@ -1,5 +1,5 @@
 # P-TS
-A Personal-Tracking System For Those Who Wants To Track Themselves!!!
+A Personal-Tracking System For Those Who Wants To Track Others!!!
 
 ## Installation:
 
@@ -9,5 +9,5 @@ A Personal-Tracking System For Those Who Wants To Track Themselves!!!
 
 ## Important:
 
-Installing LXML Will Take Time So Please Be Patient!!!
+Removed lxml🙂
 You Cannot Use The Track IP/Search E-Mail Info Feature Frequently So If You Get Any Errors Just Type `nano IP.txt` And If You See Hourly Limit Exceeded, It Means The Limit Has Been Exceeded And You Have To Either Wait Few Hours Before Using The Feature Or Use Tor/VPN & Use The Tool.
