@@ -2,7 +2,6 @@
 import requests
 import json
 import sys
-import os
 
 print ('\n [1] Search Info About Email ')
 print ('\n [2] Track Location Of IP ')
@@ -13,16 +12,13 @@ if choice == 1:
       email = input('\n Enter Email : ')
       url = ("https://api.antideo.com/email/" + email)
       r = requests.get(url)
-      d = r.content
-      with open('email.txt', 'wb') as y:
-          y.write(d)
-      with open('email.txt') as js:
-          data = json.load(js)
-      a = (data['email'])
-      b = (data['free_provider'])
-      c = (data['spam'])
-      e = (data['scam'])
-      f = (data['disposable'])
+      d = r.content.decode('utf-8')
+      q1 = json.loads(d)
+      a = (q1['email'])
+      b = (q1['free_provider'])
+      c = (q1['spam'])
+      e = (q1['scam'])
+      f = (q1['disposable'])
       print ('\n Email : ', a)
       print (' Free : ', b)
       print (' Spam : ', c)
@@ -32,28 +28,23 @@ if choice == 1:
       print ('\n Use Tor!!!')
   except KeyboardInterrupt as KeyError:
       print ('\n Exiting.....')
-
 elif choice == 2:
   try:
       sys.stdout.write('\n Enter IP : ')
-      sys.stdout.flush()
       ip = sys.stdin.readline()
-
       uri = ("https://api.antideo.com/ip/location/" + ip)
       r = requests.get(uri)
-      shh = r.content
-      with open('IP.txt', 'wb') as dd:
-       dd.write(shh)
-      with open('IP.txt') as ff:
-       dat = json.load(ff)
-      loc = (dat['location'])
-      long = (loc['longitude'])
-      lat = (loc['latitude'])
-      cc = (loc['country_code'])
-      c = (loc['city'])
-      rg = (loc['region'])
-      ac = (loc['accuracy'])
-      cy = (loc['country'])
+      shh = r.content.decode()
+      q3 = json.loads(shh)
+      loc = (q3['location'])
+      long = (q3['longitude'])
+      lat = (q3['latitude'])
+      cc = (q3['country_code'])
+      c = (q3['city'])
+      rg = (q3['region'])
+      ac = (q3['accuracy'])
+      cy = (q3['country'])
+     
       print ('\n Country : ', cy)
       print (' City : ', c)
       print (' Region : ', rg)
@@ -66,11 +57,9 @@ elif choice == 2:
       sen = "false"
       url = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyBfKxcEVzKhnhDKBQ0E_Bx-jI-vrIC2hd0&center={}&zoom={}&size={}&sensor={}".format(drq, 9, zde, sen)
       rr = requests.get(url)
-      aqr = open('local.png', 'wb')
+      aqr = open('location.png', 'wb')
       aqr.write(rr.content)
   except KeyboardInterrupt as di:
       print ('\n Exiting.....')
 
-dir = "$HOME/*.txt"
-os.system('rm -rf %s' % dir)
 exit()
