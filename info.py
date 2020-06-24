@@ -47,7 +47,7 @@ try:
    dl = (ze2['location'])
    c2r = (ze2['carrier'])
    lne = (ze2['line_type'])
-except KeyError as xlr:
+except KeyError:
    print ('\n Using Tor is mandatory !!! ')
    exit()
 
