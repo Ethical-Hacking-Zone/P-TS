@@ -23,7 +23,7 @@ if choice == 1:
       print (' Free : ', b)
       print (' Spam : ', c)
       print (' Scam : ', e)
-      print (' Temp : ', f)
+      print (' Disposable : ', f)
   except KeyError as Error:
       print ('\n Use Tor!!!')
   except KeyboardInterrupt as KeyError:
@@ -37,14 +37,13 @@ elif choice == 2:
       shh = r.content.decode()
       q3 = json.loads(shh)
       loc = (q3['location'])
-      long = (q3['longitude'])
-      lat = (q3['latitude'])
-      cc = (q3['country_code'])
-      c = (q3['city'])
-      rg = (q3['region'])
-      ac = (q3['accuracy'])
-      cy = (q3['country'])
-     
+      long = (loc['longitude'])
+      lat = (loc['latitude'])
+      cc = (loc['country_code'])
+      c = (loc['city'])
+      rg = (loc['region'])
+      ac = (loc['accuracy'])
+      cy = (loc['country'])
       print ('\n Country : ', cy)
       print (' City : ', c)
       print (' Region : ', rg)
@@ -61,5 +60,6 @@ elif choice == 2:
       aqr.write(rr.content)
   except KeyboardInterrupt as di:
       print ('\n Exiting.....')
-
+  except KeyError as Error:
+      print ('\n Use Tor / check ur ip!!!')
 exit()
