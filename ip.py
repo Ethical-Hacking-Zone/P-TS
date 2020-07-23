@@ -3,6 +3,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 ### NOTE TO DUMP NERD!!!
+#improve = @°
 class trex:
 	def __init__(self, phone, domain, req):
 		self.phone = phone
