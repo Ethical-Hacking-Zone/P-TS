@@ -1,25 +1,21 @@
 #!/usr/bin/python3
 import requests
 import json
-import sys
-
 print ('\n [1] Search Info About Email ')
 print ('\n [2] Track Location Of IP ')
 choice = int(input("\n Enter choice : "))
-
 if choice == 1:
   try:
       email = input('\n Enter Email : ')
       url = ("https://api.antideo.com/email/" + email)
       r = requests.get(url)
-      d = r.content.decode('utf-8')
-      q1 = json.loads(d)
+      q1 = json.loads(r.content.decode('utf-8'))
       a = (q1['email'])
       b = (q1['free_provider'])
       c = (q1['spam'])
       e = (q1['scam'])
       f = (q1['disposable'])
-      print ('\n Email : ', a)
+      print ('\nEmail : ', a)
       print (' Free : ', b)
       print (' Spam : ', c)
       print (' Scam : ', e)
@@ -30,12 +26,10 @@ if choice == 1:
       print ('\n Exiting.....')
 elif choice == 2:
   try:
-      sys.stdout.write('\n Enter IP : ')
-      ip = sys.stdin.readline()
+      ip = (r'Enter IP : ')
       uri = ("https://api.antideo.com/ip/location/" + ip)
       r = requests.get(uri)
-      shh = r.content.decode()
-      q3 = json.loads(shh)
+      q3 = json.loads(r.content.decode())
       loc = (q3['location'])
       long = (loc['longitude'])
       lat = (loc['latitude'])
