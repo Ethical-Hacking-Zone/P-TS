@@ -1,23 +1,15 @@
 #!/usr/bin/python3
-
 import hashlib
 import json
 import requests as req
 from bs4 import BeautifulSoup as bsp
-
 phe = input('\n Enter Your Phone Number (Without +) : ')
-
 site = "https://numverify.com/"
-
 r = req.get(site)
-
-r2 = r.content.decode('utf-8')
-r4u = (bsp(r2, 'html5lib'))
+r4u = (bsp(r.content, 'html5lib'))
 a = r4u.find_all('input', type="hidden")[1]
 a2 = a['value']
-
 ay = hashlib.md5((phe + a2).encode('utf-8')).hexdigest()
-
 headers = {
         'Host': 'numverify.com',
         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:64.0) Gecko/20100101 Firefox/64.0',
@@ -31,13 +23,10 @@ headers = {
         'Pragma': 'no-cache',
         'Cache-Control': 'no-cache'
 }
-
 ulr = "https://numverify.com/php_helper_scripts/phone_api.php?secret_key={}&number={}".format(ay, phe)
-
 try:
    rr = req.get(ulr, headers=headers)
-   inf = rr.content.decode()
-   ze2 = json.loads(inf)
+   ze2 = json.loads(rr.content.decode())
    ad = (ze2['valid'])
    at = (ze2['local_format'])
    dn = (ze2['international_format'])
@@ -50,10 +39,8 @@ try:
 except KeyError:
    print ('\n Using Tor is mandatory !!! ')
    exit()
-
 da = "\033[32m"
 re = '\033[0m'
-
 print (da +'\n Valid number : '+ re, ad)
 print (da +' Local format : '+ re, at)
 print (da +' International format : '+ re, dn)
