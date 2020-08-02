@@ -41,7 +41,7 @@ class trex:
 				print ("Anonmize yor Ip!!")
 		else:
 			print ('Abort')
-a1 = input('\n Enter as*h*** number: ')
+a1 = input('\n Enter Number: ')
 b1 = "https://numverify.com"
 aq = trex(a1, b1, 'https://numverify.com/php_helper_scripts/phone_api.php?secret_key={}&number={}')
 aq.info()
