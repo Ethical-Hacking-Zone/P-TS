@@ -26,7 +26,7 @@ class trex:
             print(' Carrier : ', xr)
         except KeyError:
             print("Anonmize yor Ip!!")
-a = input('\n Enter as*h*** number: ')
+a = input('\n Enter number: ')
 b = "https://numverify.com"
 aq = trex(a, b, 'https://numverify.com/php_helper_scripts/phone_api.php?secret_key={}&number={}')
 aq.info()
