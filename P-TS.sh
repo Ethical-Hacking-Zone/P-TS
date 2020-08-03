@@ -200,8 +200,8 @@ Startup
 Options
 
 else
-	Banner
 	Setup
+        Banner
 	Startup
 	Options
 
