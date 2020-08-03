@@ -202,6 +202,7 @@ Options
 else
 	Setup
         Banner
+        clear
 	Startup
 	Options
 
