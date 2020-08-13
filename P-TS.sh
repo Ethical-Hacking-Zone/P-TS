@@ -58,7 +58,7 @@ echo -e "\[1;95m"
 
 apt install wget curl toilet figlet unzip exa ruby python
 gem install lolcat
-wget -O $PREFIX/share/figlet/ASCII-Shadow.flf https://raw.githubusercontent.com/xero/figlet-fonts/master/ANSI%20Shadow.flf
+wget -O $PREFIX/usr/share/figlet/ASCII-Shadow.flf https://raw.githubusercontent.com/xero/figlet-fonts/master/ANSI%20Shadow.flf
 python3 -m pip install requests bs4 html5lib
 
 touch plugins.installed
